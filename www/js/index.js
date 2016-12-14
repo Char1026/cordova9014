@@ -33,6 +33,7 @@ function onDeviceReady(){
 }
 
 function btnRefresh(ev){
+//    tbody.innerHTML = "";
     ev.preventDefault();
     serverData.getJSON();
 }
@@ -150,15 +151,21 @@ function displayData(data) {
             let dg = document.createElement("div");
             
             let home = document.createElement("div");
-            console.log("This is "+home);
-          
             home.className = "hTeam";
+            let imgHome = document.createElement("img");
+            imgHome.src = TeamLogos(value.teamName);
+            imgHome.className = "standingsLogo";
             home.innerHTML = homeTeam + " " + "<b>" + item.home_score + "</b>" + "&nbsp" + "<br>";
  
             let away = document.createElement("div");
             away.className = "aTeam";
+            let imgAway = document.createElement("img");
+            imgAway.src = TeamLogos(value.teamName);
+            imgAway.className = "standingsLogo";
             away.innerHTML = "<b>" + item.away_score + " " + "</b>" + awayTeam + "&nbsp";
-
+            
+//            away.appendChild(img);
+//            home.appendChild(img);
             dg.appendChild(home);
             dg.appendChild(away);
             ul.appendChild(dg);
@@ -228,11 +235,22 @@ function displayData(data) {
     
     console.log("\n\nStandings Page\n\n");
     team_list.sort(dynamicSort("pts"));
-    
+    console.log("Here");
+    console.log(team_list);
+    let tbody = document.querySelector("#teamStandings tbody");
+//        teamLogos();
+    tbody.innerHTML = "";
     team_list.forEach(function(value){
         
-        let tbody = document.querySelector("#teamStandings tbody")
-//        tbody.innerHTML = "";
+        let img = document.createElement("img");
+        img.src = TeamLogos(value.teamName);
+        img.className = "standingsLogo";
+        
+        
+        
+        
+        
+        
         let wins = value.win;
         let losses = value.loss;
         let ties = value.tie;
@@ -256,6 +274,7 @@ function displayData(data) {
         let tdp = document.createElement("td");
         tdp.textContent = points;
 //        tr.appendChild(tlogo);
+        tdn.appendChild(img);
         tr.appendChild(tdn);
         tr.appendChild(tgp);
         tr.appendChild(tdw);
@@ -289,4 +308,59 @@ function dynamicSort(property) {
         var result = (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0;
         return result * sortOrder;
     }
+}
+
+function TeamLogos(team_list){
+    switch(team_list) {
+                case "Ottawa Senators":
+                    return "img/teamLogos/ottawa.png";
+                    break;
+                case "Montreal Canadiens":
+                    return "img/teamLogos/montreal.png";
+                    break;
+                case "New York Rangers":
+                    return "img/teamLogos/newyork.png";
+                    break;
+                case "Florida Panthers":
+                    return "img/teamLogos/florida.png";
+                    break;
+                case "Toronto Maple Leafs":
+                    return "img/teamLogos/toronto.png";
+                    break;
+                case "New York Islanders":
+                    return "img/teamLogos/longisland.png";
+                    break;
+                case "Carolina Hurricanes":
+                    return "img/teamLogos/carolina.png";
+                    break;
+                case "Buffalo Sabers":
+                    return "img/teamLogos/buffalo.png";
+                    break;
+                case "Pittsburgh Penguins":
+                    return "img/teamLogos/pittsburgh.png";
+                    break;
+                case "Tampa Bay Lightning":
+                    return "img/teamLogos/tampabay.png";
+                    break;
+                case "Boston Bruins":
+                    return "img/teamLogos/boston.png";
+                    break;
+                case "Detroit Red Wings":
+                    return "img/teamLogos/detroit.png";
+                    break;
+                case "Columbus Blue Jackets":
+                    return "img/teamLogos/columbus.png";
+                    break;
+                case "Philadelphia Flyers":
+                    return "img/teamLogos/philadelphia.png";
+                    break;
+                case "New Jersey Devils":
+                    return "img/teamLogos/newjersey.png";
+                    break;
+                case "Washington Capitals":
+                    return "img/teamLogos/washington.png";
+                    break;
+                default:
+                    return "NoTeam";
+            }
 }

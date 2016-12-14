@@ -8,7 +8,7 @@
         <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
         <param name="onload" value="true" />
     </feature>
-    <name>THL</name>
+    <name>Char1026-THL</name>
     <description>
     MAD9014 Final Fall 2016 by Tyler Charlebois
     </description>

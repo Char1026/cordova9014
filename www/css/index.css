@@ -126,6 +126,8 @@ h1 {
 
 .active {
     display: block;
+    background-color: #9FD7FF;
+    
 /*    width: 100%;*/
 /*    margin: 0 auto;*/
 }
@@ -142,7 +144,7 @@ h1 {
     bottom: 0;
     width: 100%;
     height: 4rem;
-    background-color: #CCC;
+    background-color: #28A3FF;
 }
 
 .tabs {
@@ -160,7 +162,7 @@ h1 {
     font-size: 1rem;
     text-align: center;
     text-decoration: none;
-    color: black;
+    color: #EEE;
 }
 
 .tabs a:first-child {
@@ -202,10 +204,17 @@ h1 {
 
 #teamStandings th,
 #teamStandings td {
-    border: 1px solid #999;
+    border: 1px solid #28A3FF;
     text-align: center;
     padding: 0.5rem 0.5rem;
     line-height: 2rem;
+/*    color: #EEE;*/
+}
+.standingsLogo{
+    width: 1rem;
+    height: 1rem;
+/*    padding: 1rem;*/
+    margin: 0 2rem;
 }
 
 .iconic{
@@ -218,22 +227,21 @@ h1 {
 }
 
 .hTeam{
-/*    font-size: 1rem;*/
+/*    font-size: .6rem;*/
     width: 50%;
     float: left;
     text-align: left;
+/*    color: #EEE;*/
+}
+.hTeam:nth-child(odd){
+/*    background-color: #888;*/
 }
 .aTeam{
 /*    font-size: 1rem;*/
     width: 50%;
     float: left;
     text-align: right;
-}
-.aTeam:nth-child(2n+0){
-/*    background-color: #60CBFF;*/
-}
-.hTeam:nth-child(2n+0){
-/*    background-color: #60CBFF;*/
+/*    color: #EEE;*/
 }
 
 h2{
@@ -246,32 +254,41 @@ h2{
     padding: 1rem 4rem;
     width: 100%;
     font-size: 2rem;    
+/*    color: #EEE;*/
 }
 #results_list{
-    
+    margin-left: -2.3rem
 }
 h3{
     text-align: center;
     margin-top: 3rem;
     margin-bottom: 0rem;
+    color: #EEE;
+    text-shadow: 1px 1px #777;
+
+    
 }
 ul li{
 /*    font-size: 1rem;*/
 }
 
 ul div div {
-/*    margin-top: 0px;*/
+    margin-top: .4rem;
 /*    width: 20%*/
 /*    float: left*/
+}
+.hTeam b{
+/*    margin-left: 1rem;*/
 }
 ul div{
 /*    margin-top: 15px;*/
 }
-ul div:nth-child(2n+3){
+ul div:nth-child(){
 /*    color: red;*/
 /*    background-color: #60CBFF;*/
 
 }
+
 
 @media (max-width 600px){
   

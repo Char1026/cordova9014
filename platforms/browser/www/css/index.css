@@ -1,0 +1,278 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);  
+/*    make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    background-color:#E4E4E4;
+    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image:-webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        color-stop(0, #A7A7A7),
+        color-stop(0.51, #E4E4E4)
+    );
+    background-attachment:fixed;
+    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-size:12px;
+    height:100%;
+    margin:0px;
+    padding:0px;
+    text-transform:uppercase;
+    width:100%;
+}
+
+/* Portrait layout (default) */
+.app {
+    background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
+    position:absolute;             /* position in the center of the screen */
+    left:50%;
+    top:50%;
+    height:50px;                   /* text area height */
+    width:225px;                   /* text area width */
+    text-align:center;
+    padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
+    margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
+                                   /* offset horizontal: half of text area width */
+}
+
+/* Landscape layout (with min-width) */
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+    .app {
+        background-position:left center;
+        padding:75px 0px 75px 170px;  /* padding-top + padding-bottom + text area = image height */
+        margin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
+                                      /* offset horizontal: half of image width and text area width */
+    }
+}
+
+h1 {
+    font-size:24px;
+    font-weight:normal;
+    margin:0px;
+    overflow:visible;
+    padding:0px;
+    text-align:center;
+}
+
+.event {
+    border-radius:4px;
+    -webkit-border-radius:4px;
+    color:#FFFFFF;
+    font-size:12px;
+    margin:0px 30px;
+    padding:2px 0px;
+}
+
+.event.listening {
+    background-color:#333333;
+    display:block;
+}
+
+.event.received {
+    background-color:#4B946A;
+    display:none;
+}
+
+@keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+@-webkit-keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+.blink {
+    animation:fade 3000ms infinite;
+    -webkit-animation:fade 3000ms infinite;
+}
+
+/*Pages are not displayed*/
+
+.page {
+    display: none;
+/*    padding: 2rem;*/
+}
+
+/*Unless they are the one and only active Page*/
+
+.active {
+    display: block;
+/*    width: 100%;*/
+/*    margin: 0 auto;*/
+}
+
+
+
+
+
+/*NAVIGATION*/
+
+[data-role="nav"] {
+    position: fixed;
+    z-index: 30;
+    bottom: 0;
+    width: 100%;
+    height: 4rem;
+    background-color: #CCC;
+}
+
+.tabs {
+    list-style: none;
+}
+
+.tabs li {
+    float: left;
+    width: 50%;
+}
+
+.tabs a {
+    display: block;
+    line-height: 2rem;
+    font-size: 1rem;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+}
+
+.tabs a:first-child {
+    border-right: 1px solid #333;
+}
+
+/*END NAVIGATION*/
+
+/* Start 2 page display */
+/*pages are not displayed*/
+
+[data-role="page"] {
+    width: 100%;
+    min-height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    z-index: 10;
+    padding-bottom: 5rem;
+    /* to match the height of the nav bar */
+    padding-top: 4rem;
+    /* leaving space for the heading */
+}
+
+[data-role="page"].active {
+    display: block;
+    z-index: 20;
+}
+
+/* End 2 page display */
+
+#teamStandings {
+    border-collapse: collapse;
+    border: 1px solid #666;
+    width: 90%;
+    margin: 2rem auto;
+}
+
+#teamStandings th,
+#teamStandings td {
+    border: 1px solid #999;
+    text-align: center;
+    padding: 0.5rem 0.5rem;
+    line-height: 2rem;
+}
+
+.iconic{
+    padding: 0 1rem;
+}
+.score{
+    list-style-type: none;
+    text-align: center;
+    
+}
+
+.hTeam{
+/*    font-size: 1rem;*/
+    width: 50%;
+    float: left;
+    text-align: left;
+}
+.aTeam{
+/*    font-size: 1rem;*/
+    width: 50%;
+    float: left;
+    text-align: right;
+}
+.aTeam:nth-child(2n+0){
+/*    background-color: #60CBFF;*/
+}
+.hTeam:nth-child(2n+0){
+/*    background-color: #60CBFF;*/
+}
+
+h2{
+    text-align: center;
+    font-size: 2.6rem;
+    color: #FFF;
+    text-shadow: 2px 2px #777;
+}
+#refresh{
+    padding: 1rem 4rem;
+    width: 100%;
+    font-size: 2rem;    
+}
+#results_list{
+    
+}
+h3{
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 0rem;
+}
+ul li{
+/*    font-size: 1rem;*/
+}
+
+ul div div {
+/*    margin-top: 0px;*/
+/*    width: 20%*/
+/*    float: left*/
+}
+ul div{
+/*    margin-top: 15px;*/
+}
+ul div:nth-child(2n+3){
+/*    color: red;*/
+/*    background-color: #60CBFF;*/
+
+}
+
+@media (max-width 600px){
+  
+}

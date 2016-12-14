@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="ca.edumedia.char1026.ffinal" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <feature name="Whitelist">
+        <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="SplashScreen">
+        <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
+        <param name="onload" value="true" />
+    </feature>
+    <name>THL</name>
+    <description>
+    MAD9014 Final Fall 2016 by Tyler Charlebois
+    </description>
+    <author email="dev@cordova.apache.org" href="http://cordova.io">
+        Tyler Charlebois
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <allow-intent href="market:*" />
+    <splash density="port-ldpi" src="res/screens/splash_screensTHL_MDPI- Portrait- 320x480px.png" />
+    <splash density="port-mdpi" src="res/screens/splash_screensTHL_HDPI--Portrait- 480x800px.png" />
+    <splash density="port-hdpi" src="res/screens/splash_screensTHL_XHDPI- Portrait- 720px1280px-.png" />
+    <splash density="port-xhdpi" src="res/screens/splash_screensTHL_XXHDPI--Portrait- 960px1600px-.png" />
+    <splash density="land-ldpi" src="res/screens/splash_screensTHL_MDPI- Landscape- 480x320px.png" />
+    <splash density="land-mdpi" src="res/screens/splash_screensTHL_HDPI- Landscape- 800px480px.png" />
+    <splash density="land-hdpi" src="res/screens/splash_screensTHL_XHDPI- Landscape- 1280x720px-.png" />
+    <splash density="land-xhdpi" src="res/screens/splash_screensTHL_XXHDPI- Landscape- 1600x960px.png" />
+    <icon density="mdpi" src="res/icons/THL-Logo-48-mdpi.png" />
+    <icon density="hdpi" src="res/icons/THL-Logo-72-hdpi.png" />
+    <icon density="xhdpi" src="res/icons/THL-Logo-92-xhdpi.png" />
+    <icon density="xxhdpi" src="res/icons/THL-Logo-144-xxhdpi.png" />
+    <icon density="xxxhdpi" src="res/icons/THL-Logo-192-xxxhdpi.png" />
+    <preference name="loglevel" value="DEBUG" />
+    <preference name="SplashScreen" value="screen" />
+    <preference name="SplashScreenDelay" value="5000" />
+</widget>
